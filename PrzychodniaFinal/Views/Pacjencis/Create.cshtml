@@ -1,0 +1,49 @@
+﻿@model PrzychodniaFinal.Models.Pacjenci
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Dodaj Pacjenta</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Imie" class="control-label"></label>
+                <input asp-for="Imie" class="form-control" />
+                <span asp-validation-for="Imie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nazwisko" class="control-label"></label>
+                <input asp-for="Nazwisko" class="form-control" />
+                <span asp-validation-for="Nazwisko" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pesel" class="control-label"></label>
+                <input asp-for="Pesel" class="form-control" />
+                <span asp-validation-for="Pesel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataUrodzenia" class="control-label"></label>
+                <input asp-for="DataUrodzenia" class="form-control" />
+                <span asp-validation-for="DataUrodzenia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdresZamieszkania" class="control-label"></label>
+                <input asp-for="AdresZamieszkania" class="form-control" />
+                <span asp-validation-for="AdresZamieszkania" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

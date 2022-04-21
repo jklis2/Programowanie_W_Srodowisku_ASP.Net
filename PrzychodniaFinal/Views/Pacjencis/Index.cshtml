@@ -1,0 +1,80 @@
+﻿@model IEnumerable<PrzychodniaFinal.Models.Pacjenci>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista Pacjentów</h1>
+
+<p>
+    <a asp-action="Create">
+        <button class="btn dodaj">
+            <span class="glyphicon glyphicon-edit"></span> Dodaj
+        </button>
+    </a>
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Wyszukaj: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Imie)
+            </th>
+            <th>
+                @Html.ActionLink("Nazwisko", "Index", new { sortOrder = ViewBag.NameSortParm })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pesel)
+            </th>
+            <th>
+                @Html.ActionLink("Data Urodzenia", "Index", new { sortOrder = ViewBag.BirthDateSort })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdresZamieszkania)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Imie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nazwisko)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pesel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataUrodzenia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdresZamieszkania)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PacjenciID">
+                    <button class="btn edit">
+                        <span class="glyphicon glyphicon-edit"></span> Edit
+                        </button></a> |
+                    <a asp-action="Details" asp-route-id="@item.PacjenciID">
+                    <button class="btn details">
+                        <span class="glyphicon glyphicon-edit"></span> Details
+                        </button></a> |
+                    <a asp-action="Delete" asp-route-id="@item.PacjenciID">
+                    <button class="btn delete">
+                        <span class="glyphicon glyphicon-edit"></span> Delete
+                        </button></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

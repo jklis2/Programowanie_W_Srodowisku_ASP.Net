@@ -1,0 +1,54 @@
+﻿@model PrzychodniaFinal.Models.Pracownicy
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Pracownicy</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Imie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Imie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nazwisko)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nazwisko)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pesel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pesel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AdresZamieszkania)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AdresZamieszkania)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataZatrudnienia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataZatrudnienia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.KoniecKontraktu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KoniecKontraktu)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PracownicyID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
